@@ -1,0 +1,7 @@
+workspace:
+  id: 51d7330c-ea4b-4c4f-860d-ff6298e0aff8
+cloudResources:
+  collections:
+    ../postman/collections/API Productos Laravel: 56210829-b31a591e-e28b-4499-b7da-5589f9a593f2
+  environments:
+    ../postman/environments/Laravel Local.environment.yaml: 56210829-136e19c7-2a41-4832-817f-48cc7d058806

@@ -1,0 +1,34 @@
+$kind: http-request
+url: "{{BASE_URL}}/api/productos/1?Accept=application/json&Content-Type=application/json"
+method: PUT
+queryParams:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: "{\r
+
+    \    \"precio\": 11999.00,\r
+
+    \    \"stock\": 8\r
+
+    }"
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Precio actualizado\", function () {\r
+
+      \    var jsonData = pm.response.json();\r
+
+      \    pm.expect(jsonData.stock).to.eql(8);\r
+
+      });"
+    language: text/javascript
+order: 4000

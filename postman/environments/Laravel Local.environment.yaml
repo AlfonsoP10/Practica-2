@@ -1,0 +1,15 @@
+owner: "56210829"
+team: null
+lastUpdatedBy: "56210829"
+lastRevision: 1782531346000
+name: Laravel Local
+color: 0
+values:
+  - key: BASE_URL
+    value: ""
+    enabled: true
+  - key: TOKEN
+    value: ""
+    enabled: true
+createdAt: 2026-06-27T02:30:45.000Z
+updatedAt: 2026-06-27T03:35:46.000Z

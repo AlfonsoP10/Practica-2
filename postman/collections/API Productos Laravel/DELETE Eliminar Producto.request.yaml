@@ -1,0 +1,23 @@
+$kind: http-request
+name: DELETE Eliminar Producto
+url: "{{BASE_URL}}/api/productos/3"
+method: DELETE
+scripts:
+  - type: afterResponse
+    code: "pm.test(\"Status 200\", function () {\r
+
+      \    pm.response.to.have.status(200);\r
+
+      });\r
+
+      \r
+
+      pm.test(\"Mensaje correcto\", function () {\r
+
+      \    var jsonData = pm.response.json();\r
+
+      \    pm.expect(jsonData.mensaje).to.eql(\"Eliminado\");\r
+
+      });"
+    language: text/javascript
+order: 5000

@@ -12,8 +12,13 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+       $middleware->alias([
+    'verificar.rol' => \App\Http\Middleware\VerificarRol::class,
+    'registrar.peticion' => \App\Http\Middleware\RegistrarPeticion::class,
+    'solo.celular' => \App\Http\Middleware\SoloCelular::class,
+]);
     })
+    
     ->withExceptions(function (Exceptions $exceptions): void {
         //
     })->create();
